@@ -1,0 +1,18 @@
+# yaml-language-server: $schema=./node_modules/envio/evm.schema.json
+name: envio-indexer
+field_selection:
+  transaction_fields:
+    - hash
+    - from
+    
+networks:
+- id: 10143
+  start_block: 0
+  contracts:
+  - name: AmertisRouter
+    address:
+    - 0xA89aa6a1f0347f38d75918E07E8A321Eb3C8fC09
+    handler: src/EventHandlers.ts
+    events:
+    - event: AmertisSwap(address indexed _tokenIn, address indexed _tokenOut, uint256 _amountIn, uint256 _amountOut)
+unordered_multichain_mode: true
