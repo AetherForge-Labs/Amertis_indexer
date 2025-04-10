@@ -20,7 +20,7 @@ AmertisRouter.AmertisSwap.handlerWithLoader({
     }
 
     const entity: Swap = {
-      id: `${event.chainId}_${event.block.number}_${event.logIndex}`,
+      id: event.transaction.hash,
       _tokenIn: event.params._tokenIn,
       _tokenOut: event.params._tokenOut,
       _amountIn: event.params._amountIn,
