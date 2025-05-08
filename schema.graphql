@@ -20,15 +20,6 @@ type Swap {
 	_amountIn: BigInt!
 	_amountOut: BigInt!
 	timeStamp: BigInt!
-	id: ID!
-	from: String!
-	_tokenIn: String!
-	tokenInDetails: Token!
-	_tokenOut: String!
-	tokenOutDetails: Token!
-	_amountIn: BigInt!
-	_amountOut: BigInt!
-	timeStamp: BigInt!
 }
 
 type Mint {
