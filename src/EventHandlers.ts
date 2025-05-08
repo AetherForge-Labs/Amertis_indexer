@@ -65,5 +65,3 @@ AmertisRouter.AmertisSwap.handlerWithLoader({
     context.Swap.set(entity);
   },
 });
-
-
