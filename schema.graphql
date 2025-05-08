@@ -3,11 +3,20 @@ type Account {
 	transactions: [Swap!]! @derivedFrom(field: "from")
 }
 
+type Token {
+	id: ID!
+	name: String!
+	symbol: String!
+	decimals: BigInt!
+}
+
 type Swap {
 	id: ID!
 	from: String!
 	_tokenIn: String!
+	tokenInDetails: Token!
 	_tokenOut: String!
+	tokenOutDetails: Token!
 	_amountIn: BigInt!
 	_amountOut: BigInt!
 	timeStamp: BigInt!
