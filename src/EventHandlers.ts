@@ -1,5 +1,13 @@
 import { AmertisRouter, Swap, Account, Token } from "generated";
 import { getTokenData } from "./utils";
+import { zeroAddress } from "viem";
+
+const mon: Token = {
+	id: zeroAddress,
+	symbol: "MON",
+	name: "Monad",
+	decimals: 18n,
+};
 
 AmertisRouter.AmertisSwap.handlerWithLoader({
 	loader: async ({ event, context }) => {
@@ -12,6 +20,9 @@ AmertisRouter.AmertisSwap.handlerWithLoader({
 		return { account, tokenIn, tokenOut };
 	},
 	handler: async ({ event, context, loaderReturn }) => {
+		// initialize monad token to db
+		context.Token.set(mon);
+
 		if (!loaderReturn.account) {
 			const entity: Account = {
 				id: event.transaction.from as string,

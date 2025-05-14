@@ -21,8 +21,3 @@ type Swap {
 	_amountOut: BigInt!
 	timeStamp: BigInt!
 }
-
-type Mint {
-	id: ID! #nft id
-	owner: String!
-}

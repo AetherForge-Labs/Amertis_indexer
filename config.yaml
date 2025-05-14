@@ -9,16 +9,9 @@ networks:
   - id: 10143
     start_block: 0
     contracts:
-      - name: LetterFromOlympus
-        address:
-          - 0x19B6f6D1df883BF8314Ab6646debCAfbddb83594
-        handler: src/NftEventHandler.ts
-        abi_file_path: ./src/abi/nftabi.json
-        events:
-          - event: Transfer(address indexed from, address indexed to, uint256 indexed tokenId)
       - name: AmertisRouter
         address:
-          - 0xA89aa6a1f0347f38d75918E07E8A321Eb3C8fC09
+          - 0xD158Cb79C63F4852485E37F05D20da3093d143Ed
         handler: src/EventHandlers.ts
         events:
           - event: AmertisSwap(address indexed _tokenIn, address indexed _tokenOut, uint256 _amountIn, uint256 _amountOut)
