@@ -7,7 +7,7 @@ export const client = createPublicClient({
   transport: http((monad.rpcUrls.default as any)[0], { batch: true }),
 });
 
-// Define an effect for external token data calls
+// Define an effect for external token data calls.
 export const getTokenDataEffect = createEffect(
   {
     name: "getTokenData",
