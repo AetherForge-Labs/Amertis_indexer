@@ -5,7 +5,7 @@ field_selection:
     - hash
     - from
 
-networks:
+chains:
   - id: 143
     start_block: 0
     contracts:
@@ -15,5 +15,3 @@ networks:
         handler: src/EventHandlers.ts
         events:
           - event: AmertisSwap(address indexed _tokenIn, address indexed _tokenOut, uint256 _amountIn, uint256 _amountOut)
-unordered_multichain_mode: true
-preload_handlers: true

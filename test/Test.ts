@@ -1,8 +1,5 @@
 import assert from "assert";
-import { 
-  TestHelpers,
-  AmertisRouter_AmertisSwap
-} from "generated";
+import { TestHelpers, AmertisRouter_AmertisSwap } from "envio";
 const { MockDb, AmertisRouter } = TestHelpers;
 
 describe("AmertisRouter contract AmertisSwap event tests", () => {
