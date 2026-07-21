@@ -1,4 +1,4 @@
-import { AmertisRouter, Swap, Account, Token } from "generated";
+import { indexer, AmertisRouter, Swap, Account, Token } from "envio";
 import { getTokenDataEffect } from "./utils";
 import { zeroAddress } from "viem";
 
@@ -9,7 +9,9 @@ const mon: Token = {
   decimals: 18n,
 };
 
-AmertisRouter.AmertisSwap.handler(async ({ event, context }) => {
+indexer.onEvent(
+  { contract: "AmertisRouter", event: "AmertisSwap" },
+  async ({ event, context }) => {
   // Initialize monad token to db
   context.Token.set(mon);
 
@@ -67,4 +69,5 @@ AmertisRouter.AmertisSwap.handler(async ({ event, context }) => {
     tokenOutDetails_id: event.params._tokenOut as string,
   };
   context.Swap.set(entity);
-});
+}
+);
